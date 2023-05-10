@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // 给定一个整数数组 nums 和一个整数目标值 target，
+    // 请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
+    const arrs = [2, 7, 11, 15]
+    const targets = 9
+
+    var twoSum = function(arr, target) {
+      const map = new Map();
+      for (let index = 0; index < arr.length; index++) {
+        const complement = target - arr[index];
+        console.log('map1', map);
+        if (map.has(complement)) {
+          console.log('map2', map);
+          return [map.get(complement), index];
+        } else {
+          map.set(arr[index], index)
+          console.log('map3', map);
+        }
+      }
+
+      return []
+    }
+    twoSum(arrs, targets)
+
+
+  </script>
+</body>
+
+</html>
